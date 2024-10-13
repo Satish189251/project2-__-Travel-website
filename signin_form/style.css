@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    background: #23242a;
+}
+.form_container{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden; 
+}
+.form_container::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+}
+.form_container::after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate {
+    0% { 
+        transform: rotate(0deg);
+     }
+    100% { 
+        transform: rotate(360deg);
+     }
+}
+.borderline{
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+.borderline::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#ff2770,#ff2770,#ff2770);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.borderline::after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#ff2770,#ff2770,#ff2770);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+.form_container form{
+    position: absolute;
+    negative: #222;
+    border-radius: 8px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    inset: 4px;
+}
+.form_container form h2{
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.form_container form .input-box{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.form_container form .input-box input{
+    position: relative;
+    padding: 20px 10px 10px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #23242a;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    transition: 0.5s;
+    z-index: 10;
+}
+.form_container form .input-box span{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: #8f8f8f;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    transition: 0.5s;
+}
+.form_container form .input-box input:focus ~ span,
+.form_container form .input-box input:valid ~ span{
+    color: #fff;
+    font-size: 0.9em;
+    transform: translateY(-34px);
+}
+.form_container form .input-box i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    pointer-events: none;
+}
+form_container form .input-box input:valid ~ i,
+.form_container form .input-box input:focus ~ i{
+    height: 44px;
+}
+.form_container form .links{
+    display: flex;
+    justify-content: space-between;
+}
+.form_container form .links a{
+    margin: 10px 0;
+    color: #8f8f8f;
+    font-size:0.75em ;
+    text-decoration: none;
+}
+.form_container form .links a:hover,
+.form_container form .links a:nth-child(2){
+    color: #fff;
+}
+.form_container form input[type="submit"]{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+}
+.form_container form input[type="submit"]:active{
+    opacity: 0.8;
+}
